@@ -20,15 +20,17 @@
   // ==========================================================================
   var CLAVE = "eec_state";
   var estado = cargarEstado();
+  // Fecha de inicio: se fija la primera vez y no se toca más. La semana se cuenta sola.
+  if (!estado.inicio) { estado.inicio = claveHoy(); guardarEstado(); }
 
   function cargarEstado() {
-    var def = { semanaProgresion: 1, tema: "oscuro", silenciado: false, completados: {} };
+    var def = { inicio: "", tema: "oscuro", silenciado: false, completados: {} };
     try {
       var raw = localStorage.getItem(CLAVE);
       if (!raw) return def;
       var s = JSON.parse(raw);
       return {
-        semanaProgresion: s.semanaProgresion || 1,
+        inicio: s.inicio || "",
         tema: s.tema === "claro" ? "claro" : "oscuro",
         silenciado: !!s.silenciado,
         completados: s.completados || {}
@@ -40,10 +42,23 @@
   }
 
   function claveHoy() {
-    var d = new Date();
+    return fechaClave(new Date());
+  }
+  function fechaClave(d) {
     var m = String(d.getMonth() + 1).padStart(2, "0");
     var dd = String(d.getDate()).padStart(2, "0");
     return d.getFullYear() + "-" + m + "-" + dd;
+  }
+
+  // Semana de progresión, calculada por tiempo real desde la fecha de inicio.
+  // No se puede saltear: avanza sola cada 7 días.
+  function semanaProgresion() {
+    if (!estado.inicio) return 1;
+    var inicio = new Date(estado.inicio + "T00:00:00");
+    var hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+    var dias = Math.floor((hoy - inicio) / 86400000);
+    if (dias < 0) dias = 0;
+    return Math.floor(dias / 7) + 1;
   }
 
   function notaProgresion(semana) {
@@ -249,8 +264,9 @@
   function renderInicio() {
     document.documentElement.setAttribute("data-tema", estado.tema);
     refrescarBotonesSilencio();
-    $("badge-semana").textContent = "Semana " + estado.semanaProgresion;
-    $("nota-progresion").textContent = notaProgresion(estado.semanaProgresion);
+    var semana = semanaProgresion();
+    $("badge-semana").textContent = "Semana " + semana;
+    $("nota-progresion").textContent = notaProgresion(semana);
 
     var hoy = new Date();
     $("saludo-dia").textContent = "Hoy es " + DIAS[hoy.getDay()];
@@ -288,8 +304,16 @@
 
   function renderListaEjercicios(tipoSesion) {
     var cont = $("lista-ejercicios");
+    var detalle = $("detalle-ejercicios");
     cont.innerHTML = "";
-    if (!tipoSesion) return; // descanso sin elección: no mostramos lista
+
+    if (!tipoSesion) {
+      // descanso sin elección: ocultamos el desplegable entero
+      hide(detalle);
+      return;
+    }
+    show(detalle);
+    detalle.open = false; // arranca colapsado cada vez que cambia la sesión
 
     var sesion = R.sesiones[tipoSesion];
 
@@ -595,13 +619,6 @@
         actualizarBotonEmpezar();
       });
     }
-
-    // Avanzar semana de progresión
-    $("btn-avanzar-semana").addEventListener("click", function () {
-      estado.semanaProgresion++;
-      guardarEstado();
-      renderInicio();
-    });
 
     // Empezar
     $("btn-empezar").addEventListener("click", function () {

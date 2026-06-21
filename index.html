@@ -37,13 +37,18 @@
         </div>
       </div>
 
-      <div id="lista-ejercicios" class="lista-ejercicios"></div>
+      <details id="detalle-ejercicios" class="detalle-ejercicios">
+        <summary class="resumen-ejercicios">
+          <span>Ver ejercicios de hoy</span>
+          <span class="chevron">▾</span>
+        </summary>
+        <div id="lista-ejercicios" class="lista-ejercicios"></div>
+      </details>
 
       <button id="btn-empezar" class="btn-grande btn-empezar" type="button">Empezar</button>
     </main>
 
     <footer class="inicio-footer">
-      <button id="btn-avanzar-semana" class="btn-secundario" type="button">Avanzar semana de progresión</button>
       <p id="estado-hoy" class="estado-hoy"></p>
     </footer>
   </section>

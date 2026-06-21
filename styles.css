@@ -172,8 +172,32 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .sel-btn.activo { border-color: var(--acento); background: var(--bg); }
 
+/* Desplegable con la lista de ejercicios */
+.detalle-ejercicios { margin-bottom: 22px; }
+.resumen-ejercicios {
+  list-style: none;            /* saca el triangulito por defecto */
+  cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  min-height: 56px;
+  padding: 14px 16px;
+  background: var(--bg-2);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--texto);
+  user-select: none;
+}
+.resumen-ejercicios::-webkit-details-marker { display: none; }
+.resumen-ejercicios:active { background: var(--bg-3); }
+.resumen-ejercicios .chevron { transition: transform .2s ease; color: var(--texto-2); }
+.detalle-ejercicios[open] .resumen-ejercicios .chevron { transform: rotate(180deg); }
+.detalle-ejercicios[open] .resumen-ejercicios {
+  border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+}
+
 /* Lista de ejercicios de hoy */
-.lista-ejercicios { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+.lista-ejercicios { display: flex; flex-direction: column; gap: 10px; padding: 12px; background: var(--bg); border: 1px solid var(--borde); border-top: none; border-radius: 0 0 12px 12px; }
+.lista-ejercicios:empty { display: none; }
 .grupo-titulo {
   font-size: .85rem;
   text-transform: uppercase;

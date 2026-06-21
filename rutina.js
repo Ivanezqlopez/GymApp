@@ -28,7 +28,7 @@ window.RUTINA = {
   // Calentamiento: SIEMPRE va primero, en cualquier sesión.
   calentamiento: [
     { nombre: "Marcha en el lugar",            tipo: "tiempo", segundos: 150, video: "https://www.youtube.com/watch?v=0e4251eQAE8&pp=ygUcbWFyY2hhIGVuIGVsIGx1Z2FyIGVqZXJjaWNpb9IHCQk_CwGHKiGM7w%3D%3D" },
-    { nombre: "Movilidad de hombros",          tipo: "reps",   objetivo: "10 + 10", video: "" },
+    { nombre: "Movilidad de hombros",          tipo: "reps",   objetivo: "10 + 10", video: "https://www.youtube.com/watch?v=bFWrgXEJ3rQ" },
     { nombre: "Gato-vaca",                     tipo: "reps",   objetivo: "8-10", video: "" },
     { nombre: "Rotación de cadera en silla",   tipo: "reps",   objetivo: "10 por lado", porLado: true, video: "" },
     { nombre: "Respiración profunda",          tipo: "reps",   objetivo: "x10", video: "" }

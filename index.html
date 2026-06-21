@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-tema="oscuro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f1115" />
+  <title>ejercicios-en-casa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ====================== PANTALLA DE INICIO ====================== -->
+  <section id="inicio" class="vista">
+    <header class="topbar">
+      <div class="topbar-info">
+        <span id="badge-semana" class="badge">Semana 1</span>
+      </div>
+      <div class="topbar-actions">
+        <button id="btn-tema" class="icon-btn" type="button" title="Cambiar tema" aria-label="Cambiar tema">🌓</button>
+        <button id="btn-silencio" class="icon-btn" type="button" title="Silenciar" aria-label="Silenciar">🔊</button>
+      </div>
+    </header>
+
+    <main class="inicio-main">
+      <p id="saludo-dia" class="saludo-dia"></p>
+      <h1 id="tipo-sesion" class="tipo-sesion"></h1>
+
+      <p id="nota-progresion" class="nota-progresion"></p>
+
+      <!-- Mensaje + selector que aparece sólo en días de descanso -->
+      <div id="bloque-descanso" class="bloque-descanso oculto">
+        <p id="msg-descanso" class="msg-descanso"></p>
+        <p class="msg-descanso-sub">¿Querés entrenar igual? Elegí una sesión:</p>
+        <div class="selector-sesion">
+          <button class="sel-btn" data-sesion="fuerza" type="button">Fuerza</button>
+          <button class="sel-btn" data-sesion="cardio" type="button">Cardio + Movilidad</button>
+        </div>
+      </div>
+
+      <div id="lista-ejercicios" class="lista-ejercicios"></div>
+
+      <button id="btn-empezar" class="btn-grande btn-empezar" type="button">Empezar</button>
+    </main>
+
+    <footer class="inicio-footer">
+      <button id="btn-avanzar-semana" class="btn-secundario" type="button">Avanzar semana de progresión</button>
+      <p id="estado-hoy" class="estado-hoy"></p>
+    </footer>
+  </section>
+
+  <!-- ====================== MODO TIMER ====================== -->
+  <section id="timer" class="vista oculto">
+    <header class="timer-top">
+      <button id="btn-salir" class="icon-btn" type="button" title="Volver al inicio" aria-label="Volver al inicio">✕</button>
+      <span id="timer-etiqueta" class="timer-etiqueta"></span>
+      <button id="btn-silencio-2" class="icon-btn" type="button" title="Silenciar" aria-label="Silenciar">🔊</button>
+    </header>
+
+    <div id="timer-progreso" class="timer-progreso"></div>
+
+    <main class="timer-main">
+      <p id="timer-modo" class="timer-modo"></p>
+      <h1 id="timer-nombre" class="timer-nombre"></h1>
+
+      <!-- Para reps: muestra el objetivo. Para tiempo/descanso: el contador. -->
+      <p id="timer-objetivo" class="timer-objetivo oculto"></p>
+      <div id="timer-cuenta" class="timer-cuenta oculto"></div>
+
+      <div id="timer-video" class="timer-video oculto"></div>
+
+      <p id="timer-nota" class="timer-nota oculto"></p>
+      <p id="timer-proximo" class="timer-proximo oculto"></p>
+    </main>
+
+    <div class="timer-controles">
+      <!-- Acción principal: "Hecho" en reps, "Pausar/Reanudar" en tiempo -->
+      <button id="btn-principal" class="btn-grande btn-principal" type="button">Hecho</button>
+
+      <div class="controles-fila">
+        <button id="btn-anterior" class="btn-control" type="button">◀ Anterior</button>
+        <button id="btn-mas10" class="btn-control oculto" type="button">+10s</button>
+        <button id="btn-saltar" class="btn-control" type="button">Saltar ▶</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== PANTALLA FINAL ====================== -->
+  <section id="fin" class="vista oculto">
+    <main class="fin-main">
+      <div class="fin-emoji">✅</div>
+      <h1 class="fin-titulo">¡Sesión completa!</h1>
+      <p id="fin-sub" class="fin-sub"></p>
+      <button id="btn-fin-inicio" class="btn-grande" type="button">Volver al inicio</button>
+    </main>
+  </section>
+
+  <!-- Config primero, lógica después (scripts clásicos: funcionan con file://) -->
+  <script src="rutina.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

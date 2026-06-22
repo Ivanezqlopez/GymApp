@@ -29,7 +29,7 @@ window.RUTINA = {
   calentamiento: [
     { nombre: "Marcha en el lugar",            tipo: "tiempo", segundos: 150, video: "https://www.youtube.com/watch?v=0e4251eQAE8&pp=ygUcbWFyY2hhIGVuIGVsIGx1Z2FyIGVqZXJjaWNpb9IHCQk_CwGHKiGM7w%3D%3D" },
     { nombre: "Movilidad de hombros",          tipo: "reps",   objetivo: "10 + 10", video: "https://www.youtube.com/watch?v=bFWrgXEJ3rQ" },
-    { nombre: "Gato-vaca",                     tipo: "reps",   objetivo: "8-10", video: "" },
+    { nombre: "Gato-vaca",                     tipo: "reps",   objetivo: "8-10", video: "https://www.youtube.com/watch?v=xj6AtZa9UXE" },
     { nombre: "Rotación de cadera en silla",   tipo: "reps",   objetivo: "10 por lado", porLado: true, video: "" },
     { nombre: "Respiración profunda",          tipo: "reps",   objetivo: "x10", video: "" }
   ],
@@ -42,17 +42,17 @@ window.RUTINA = {
         rondas: 3,
         descanso: 70, // segundos entre ejercicios del circuito
         ejercicios: [
-          { nombre: "Puente de glúteos",            tipo: "reps", objetivo: "12-15", video: "" },
-          { nombre: "Sentadilla asistida a silla",  tipo: "reps", objetivo: "10-12", video: "" },
-          { nombre: "Remo con banda/toalla",        tipo: "reps", objetivo: "12-15", video: "",
+          { nombre: "Puente de glúteos",            tipo: "reps", objetivo: "12-15", video: "https://www.youtube.com/watch?v=uuiN9NRFMBo&list=PLs1bZHvTLFgg_NxxwaaS2xDuRn64d-boh&index=5" },
+          { nombre: "Sentadilla asistida a silla",  tipo: "reps", objetivo: "10-12", video: "https://www.youtube.com/watch?v=I63oel2pBKM&list=PLs1bZHvTLFgg_NxxwaaS2xDuRn64d-boh" },
+          { nombre: "Remo con banda/toalla",        tipo: "reps", objetivo: "12-15", video: "https://www.youtube.com/watch?v=zqRiAFTcjCc&list=PLs1bZHvTLFgg_NxxwaaS2xDuRn64d-boh&index=2",
             nota: "Sin banda: remo invertido con toalla en picaporte, o apretar escápulas 10-12" },
-          { nombre: "Bird-Dog",                     tipo: "reps", objetivo: "8-10 por lado", porLado: true, video: "" },
-          { nombre: "Dead Bug",                     tipo: "reps", objetivo: "8-10 por lado", porLado: true, video: "" },
-          { nombre: "Flexiones en pared o rodillas",tipo: "reps", objetivo: "8-12", video: "" }
+          { nombre: "Bird-Dog",                     tipo: "reps", objetivo: "8-10 por lado", porLado: true, video: "https://www.youtube.com/watch?v=hVrAuwakp84&list=PLs1bZHvTLFgg_NxxwaaS2xDuRn64d-boh&index=3" },
+          { nombre: "Dead Bug",                     tipo: "reps", objetivo: "8-10 por lado", porLado: true, video: "https://www.youtube.com/watch?v=g_BYB0R-4Ws&list=PLs1bZHvTLFgg_NxxwaaS2xDuRn64d-boh&index=4" },
+          { nombre: "Flexiones en pared o rodillas",tipo: "reps", objetivo: "8-12", video: "https://www.youtube.com/watch?v=_ifxX0U-xrM&pp=ygUSZmxleGlvbmVzIGVuIHBhcmVk" }
         ]
       },
       cierre: [
-        { nombre: "Marcha con brazos (Zona 2)", tipo: "tiempo", segundos: 600, video: "" }
+        { nombre: "Marcha con brazos (Zona 2)", tipo: "tiempo", segundos: 600, video: "https://www.youtube.com/watch?v=0e4251eQAE8&pp=ygUcbWFyY2hhIGVuIGVsIGx1Z2FyIGVqZXJjaWNpb9IHCQk_CwGHKiGM7w%3D%3D" }
       ]
     },
 
@@ -60,8 +60,8 @@ window.RUTINA = {
     cardio: {
       titulo: "Cardio + Movilidad",
       ejercicios: [
-        { nombre: "Marcha / caminata (Zona 2)",     tipo: "tiempo", segundos: 1500, video: "" },
-        { nombre: "Gato-vaca",                      tipo: "reps",   objetivo: "x10", video: "" },
+        { nombre: "Marcha / caminata (Zona 2)",     tipo: "tiempo", segundos: 1500, video: "https://www.youtube.com/watch?v=0e4251eQAE8&pp=ygUcbWFyY2hhIGVuIGVsIGx1Z2FyIGVqZXJjaWNpb9IHCQk_CwGHKiGM7w%3D%3D" },
+        { nombre: "Gato-vaca",                      tipo: "reps",   objetivo: "x10", video: "https://www.youtube.com/watch?v=xj6AtZa9UXE" },
         { nombre: "Estiramiento de pecho",          tipo: "tiempo", segundos: 30, nota: "x2 series", video: "" },
         { nombre: "Rotación de tronco sentado",     tipo: "reps",   objetivo: "8 por lado", porLado: true, video: "" },
         { nombre: "Isquiotibiales sentado",         tipo: "tiempo", segundos: 30, nota: "por lado (repetir del otro lado)", video: "" },
